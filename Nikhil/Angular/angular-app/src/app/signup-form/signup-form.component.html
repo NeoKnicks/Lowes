@@ -1,0 +1,37 @@
+<button mat-raised-button color="accent" (click) = register() >{{signupStatus ? 'Not Now!' : 'Register'}}</button>
+
+<br/>
+
+<form class="example-form" *ngIf="signupStatus; else signUpFalse">
+  <div>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="First Name" value="" name="fName" [(ngModel)]="this.formFields.fName">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Last Name" value="" name="lName" [(ngModel)]="this.formFields.lName">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Age" value="" name="age" [(ngModel)]="this.formFields.age">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Company" value="" name="company" [(ngModel)]="this.formFields.company">
+    </mat-form-field>
+  </div>
+
+  <div>
+      <button mat-raised-button color="accent" (click)="signUp()">Sign Up!</button>
+  </div>
+</form>
+<ng-template #signUpFalse>
+    <p> Click on the register button to register </p>
+</ng-template>
+

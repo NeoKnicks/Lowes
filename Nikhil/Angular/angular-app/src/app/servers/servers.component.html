@@ -1,0 +1,17 @@
+<h1 class="header"> List Of Servers </h1>
+<app-server *ngFor="let server of serverList; index as i" (click) = deleteServer(i)> </app-server>
+<hr />
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Server Name" value="">
+    </mat-form-field>
+</form>
+<div>
+    <button mat-raised-button color="accent" (click)="createServer($event)">Add Server</button>
+    <p> {{ serverCreatedStatus }} </p>
+</div>
+
+<br />
+<br />
+<br />
